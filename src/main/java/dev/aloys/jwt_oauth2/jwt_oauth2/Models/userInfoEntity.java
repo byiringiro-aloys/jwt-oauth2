@@ -14,9 +14,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 @Table(name = "USER_INFO")
 public class userInfoEntity {
     @GeneratedValue(strategy = GenerationType.UUID)

@@ -1,0 +1,39 @@
+package dev.aloys.jwt_oauth2.jwt_oauth2.Models;
+
+import java.util.UUID;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+public class userInfoEntity {
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Id
+    private UUID userId;
+
+    @Column(name = "USER_NAME",unique = true,nullable = false)
+    private String username;
+
+    @Column(name = "EMAIL_ID",nullable = false,unique = true)
+    private String emailId;
+
+    @Column(name = "PASSWORD",nullable = false)
+    @Size(min = 5,message = "Password must be 5 or more characters long.")
+    private String password;
+
+    @Column(name = "MOBILE_NUMBER",nullable = false)
+    private String mobileNumber;
+
+    @Column(name = "ROLES",nullable = false)
+    private String roles;
+}

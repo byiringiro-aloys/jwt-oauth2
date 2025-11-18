@@ -33,7 +33,7 @@ public class userInfoEntity {
     @Size(min = 5,message = "Password must be 5 or more characters long.")
     private String password;
 
-    @Column(name = "MOBILE_NUMBER",nullable = false)
+    @Column(name = "MOBILE_NUMBER",nullable = true)
     private String mobileNumber;
 
     @Column(name = "ROLES",nullable = false)

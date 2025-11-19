@@ -25,32 +25,32 @@ public class userInfoConfig implements UserDetails {
 
     @Override
     public String getPassword(){
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
+        return userInfoEntity.getPassword();
     }
 
     @Override
     public String getUsername() {
-       throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
+       return userInfoEntity.getEmailId();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return UserDetails.super.isAccountNonExpired();
+        return userInfoEntity.isAccountNonExpired();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return UserDetails.super.isAccountNonLocked();
+        return userInfoEntity.isAccountNonLocked();
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return UserDetails.super.isCredentialsNonExpired();
+        return userInfoEntity.isCredentialsNonExpired();
     }
 
     @Override
     public boolean isEnabled() {
-        return UserDetails.super.isEnabled();
+        return userInfoEntity.isEnabled();
     }
     
 }

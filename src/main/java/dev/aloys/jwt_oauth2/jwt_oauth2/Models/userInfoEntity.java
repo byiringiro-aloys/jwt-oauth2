@@ -1,5 +1,7 @@
 package dev.aloys.jwt_oauth2.jwt_oauth2.Models;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -38,4 +40,11 @@ public class userInfoEntity {
 
     @Column(name = "ROLES",nullable = false)
     private String roles;
+
+    private Date timeToChangePassword;
+
+    private boolean isAccountNonExpired = true;
+    private boolean isAccountNonLocked = true;
+    private boolean isCredentialsNonExpired = true;
+    private boolean isEnabled = false;
 }
